@@ -12,9 +12,9 @@
     --bg3: #111820;
     --card: #0f1620;
     --border: rgba(255,255,255,0.07);
-    --accent: #f20981;
+    --accent: #f472b6;
     --accent2: #e879f9;
-    --accent3: #ec326d;
+    --accent3: #fb7185;
     --text: #f0e8f0;
     --muted: #9e8fa0;
     --glow: rgba(244,114,182,0.15);
@@ -72,41 +72,49 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 20px 60px;
+    padding: 0 60px;
+    height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(250, 145, 204, 0.555);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(8, 6, 10, 0.75);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(244,114,182,0.1);
+  }
+  nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(244,114,182,0.6), rgba(232,121,249,0.6), transparent);
   }
   .nav-logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    color: var(--accent);
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, #f472b6, #e879f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .nav-links { display: flex; gap: 36px; }
+  .nav-links { display: flex; gap: 6px; }
   .nav-links a {
     text-decoration: none;
     color: var(--muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.3s;
-    position: relative;
+    transition: all 0.25s;
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid transparent;
   }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0;
-    width: 0; height: 1px;
-    background: var(--accent);
-    transition: width 0.3s ease;
+  .nav-links a:hover {
+    color: var(--accent);
+    border-color: rgba(244,114,182,0.3);
+    background: rgba(244,114,182,0.07);
   }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links a:hover::after { width: 100%; }
 
   /* HERO */
   .hero {
